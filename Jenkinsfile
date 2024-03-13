@@ -30,6 +30,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: '2aeb69d4-2458-4df1-9351-6cecfc8b797f', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     bat """docker pull orion87/student-registry:1.0.0
                             docker-compose -f docker-compose.yml up -d"""
+                            // docker run -d -p 8081:8081 orion87/student-registry:1.0.0 with Dokerfile(no docker-compose.yml)
                 }
             }
         }
